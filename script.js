@@ -22,8 +22,9 @@ function img (img) {
     let imgUrl = `https://image.tmdb.org/t/p/w500${path}/images?${api_key}`;
     let titleName = mdata.original_title;
     let rate=mdata.vote_average;
+    let overview=mdata.overview;
     let moviePos = document.createElement("div");
-    moviePos.innerHTML=`<div class="movies"><img class="movie" src="${imgUrl}" alt="poster"><div class="info"><h2>${titleName}</h2><span><i class="fa-solid fa-star"></i>${rate}</span></div><div id="overview"><h4>Overview</h4><p></p></div></div>`
+    moviePos.innerHTML=`<div class="movies"><img class="movie" src="${imgUrl}" alt="poster"><div class="info"><h2>${titleName}</h2><span><i class="fa-solid fa-star"></i>${rate}</span></div><div id="overview"><h3>Overview</h3><p>${overview}</p></div></div>`
     movieList.appendChild(moviePos);
     moviePos.style.cursor="pointer"
   });

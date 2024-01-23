@@ -37,6 +37,7 @@ body{
     cursor: pointer;
     margin-top: 50px;
     z-index: 1;
+    position: relative;
 }
 #movielist{
     display: flex;
@@ -44,7 +45,7 @@ body{
     justify-content: space-evenly;
     gap: 20px;
     margin: 20px;
-    margin-top: 40px;
+    margin-top: 40px;   
 }
 #movielist img{
     width: 300px;
@@ -56,7 +57,7 @@ body{
     background-color: #1A1B21;
     height: 80px;
     width: 100%;
-    display: flex;
+    display:flex;
     justify-content: space-between;
     padding: 15px;
     color: #fff;
@@ -64,17 +65,31 @@ body{
     margin-bottom: 3px;
     overflow: hidden;
 }
+.info span{
+    color: yellow;
+}
 #overview{
     width: 100%;
-    height: 150px;
+    height: 295px;
+    opacity: 95%;
     background: #000;
     color: #fff;
-    transition: 0.3s;
-    display: none;
+    transition: 0.8s;
+    transform: translateY(50px);
+    overflow-y: scroll;
+    padding: 20px;   
 }
-.movies:hover{
+#overview p{
+    font-size: small;
+    font-weight: 300;
+}
+#overview::-webkit-scrollbar {
+    display: none;
+  }
+.movies:hover #overview{
     background-color: #1A1B21;
-    
+    transform: translateY(-300px);
+    display: block;
 }
 
 
