@@ -107,7 +107,9 @@ body{
     }
     .movies{
         width: 220px;
-        height:300px;    
+        height:300px; 
+        margin-left: 20px;   
+        margin-right: 10px;
     }
     #movielist img{
         height: 240px;
