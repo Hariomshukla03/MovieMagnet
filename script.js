@@ -24,22 +24,26 @@ function img (img) {
     let rate=mdata.vote_average;
     let overview=mdata.overview;
     let moviePos = document.createElement("div");
+    moviePos.innerHTML="";
     moviePos.innerHTML=`<div class="movies"><img class="movie" src="${imgUrl}" alt="poster"><div class="info"><h2>${titleName}</h2><span><i class="fa-solid fa-star"></i>${rate}</span></div><div id="overview"><h3>Overview</h3><p>${overview}</p></div></div>`
     movieList.appendChild(moviePos);
     moviePos.style.cursor="pointer"
-  });
+
+  })
+  
   };
 
     input.addEventListener(("input"),()=>{
     let inputvalue=input.value;
     // console.log(inputvalue);
     let element=search+inputvalue;
-    console.log(element); 
+    // console.log(element); 
     async function searchMov(movie){
       let response= await fetch(element);
       let data=await response.json();
       if(inputvalue){
-        img(data.results)
+        movieList.innerHTML="";
+        img(data.results);
       }
     }
     searchMov(); 
